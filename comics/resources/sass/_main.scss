@@ -1,0 +1,311 @@
+.comics {
+
+    padding: 50px 0;
+    background-color: $eerie-black;
+    position: relative;
+
+    .section-label {
+
+        width: 200px;
+        height: 50px;
+        background-color: $azure-radiance;
+        position: absolute;
+        top: -25px;
+        left: 10%;
+        color: $white;
+        font-size: $large-font;
+        text-transform: uppercase;
+        line-height: 50px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .container {
+
+        @include flex(row, center, center);
+        flex-wrap: wrap;
+    }
+
+    .comic {
+        margin: 0 10px;
+        flex-basis: calc(100% / 6 - 20px);
+
+        .comic-cover {
+            height: 200px;
+            width: 100%;
+
+            img {
+
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: top center;
+            }
+        }
+
+        .comic-name {
+
+            min-height: 50px;
+            text-transform: uppercase;
+
+            a {
+                text-decoration: none;
+                color: $white;
+
+                &:hover {
+
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.merchandise {
+
+    background-color: $azure-radiance;
+    padding: 30px 0;
+
+    .buy-links {
+
+        @include flex(row, space-between, center);
+        list-style-type: none;
+
+        img {
+
+            width: 40px;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        &>li>a {
+
+            @include flex(row, space-between, center);
+            text-decoration: none;
+        }
+
+        .merch-text {
+
+            color: $white;
+            text-transform: uppercase;
+            font-size: $base-font;
+        }
+    }
+
+}
+
+.comic {
+
+    .container {
+
+        @include flex(row, null, flex-start);
+        width: 70%;
+        padding: 50px 0;
+    }
+
+    .comic-cover-bar {
+
+        width: 100%;
+        height: 60px;
+        background-color: $azure-radiance;
+        position: relative;
+
+        .wrapper-comic-cover {
+
+            position: absolute;
+            bottom: 20px;
+            left: 15%;
+            border: 2px solid $white;
+
+            img {
+
+                position: relative;
+            }
+
+            .label {
+                position: absolute;
+                background-color: $faux-cerulean;
+                z-index: 2;
+                color: $white;
+                text-transform: uppercase;
+            }
+
+            .comic-type-label {
+
+                top: 0;
+                left: 0;
+                padding: 2px;
+            }
+
+            .view-gallery-label {
+
+                bottom: 0;
+                left: 0;
+                right: 0;
+                text-align: center;
+            }
+        }
+    }
+
+    .comic-info {
+
+        flex-basis: 70%;
+
+        .comic-title {
+
+            color: $prussian-blue;
+            font-size: $extra-large-font;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 20px 0;
+        }
+
+        .availability-bar {
+
+            @include flex(row, null, center);
+            padding: 0 10px;
+            height: 50px;
+            color: $acid-green;
+            font-weight: bold;
+            background-color: $rayquaza-green;
+            border-bottom: 1px solid $may-green;
+
+            .wrapper-price {
+
+                flex-grow: 1;
+
+                .price {
+
+                    color: $white;
+                }
+            }
+
+            .availability {
+
+                text-transform: uppercase;
+                padding: 0 10px;
+            }
+
+            .select-check-availabilty {
+
+                @include flex(row,center,center);
+                height: 39px;
+                padding: 0 50px;
+                color: $white;
+                border-left: 1px solid $may-green;
+
+                .fa-caret-down {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .comic-description {
+
+            font-size: $medium-font;
+            color: $charcoal;
+            line-height: 26px;
+            padding: 20px 0;
+        }
+    }
+
+    .banner-adv {
+
+        @include flex(column,center,flex-end);
+        flex-basis: 30%;
+
+        h3 {
+
+            color: $charcoal;
+            text-transform: uppercase;
+        }
+    }
+
+    .comic-recap {
+
+        .container {
+
+            @include flex(row,space-between,null);
+        }
+
+        background-color: $light-grey;
+        border-top: 1px solid $whisper-grey;
+
+        .talent, .specs {
+
+            flex-basis: 45%;
+
+            a {
+
+                text-decoration: none;
+                color: $gyarados-cyan;
+
+                &:hover {
+
+                    text-decoration: underline;
+                }
+            }
+
+            h2 {
+
+                color: $prussian-blue;
+                font-size: $large-font;
+                padding: 20px 0;
+                border-bottom: 1px solid $whisper-grey;
+            }
+
+            .artists, .writers, .series-type, .sale-date, .price {
+
+                @include flex(row, space-between, center);
+                padding: 10px 0;
+                border-bottom: 1px solid $whisper-grey;
+
+                .row-title {
+                    flex-basis: 40%;
+                }
+
+                .row-content {
+                    flex-basis: 60%;
+                }
+            }
+
+            .series-type a {
+
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .merchandise {
+
+        background-color: $light-grey;
+        border-top: 1px solid $whisper-grey;
+        padding: 0;
+
+        .container {
+
+            padding: 0;
+        }
+
+        ul {
+
+            list-style-type: none;
+            width: 100%;
+            @include flex(row, center, center);
+
+            & > li {
+                border-left: 1px solid $whisper-grey;
+                border-right: 1px solid $whisper-grey;
+                padding: 10px 20px;
+                color: $charcoal;
+                font-weight: 700;
+                text-transform: uppercase;
+                flex-basis: 25%;
+                @include flex(row,space-between,center);
+            }
+        }
+    }
+
+
+}

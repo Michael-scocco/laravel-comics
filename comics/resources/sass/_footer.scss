@@ -1,0 +1,106 @@
+footer {
+
+    ul {
+
+        list-style-type: none;
+    }
+
+    .footer-top {
+        height: 400px;
+        background: url("../../storage/app/public/assets/footer-bg.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+
+        .container {
+
+            @include flex(row, space-between, flex-start);
+        }
+
+        .list-title {
+
+            color: $white;
+            text-transform: uppercase;
+            font-size: $medium-font;
+            font-weight: bold;
+        }
+
+        .footer-links {
+
+            flex-basis: 50%;
+            height: 400px;
+            @include flex(row, bull, center);
+
+            &>ul {
+
+                width: 50%;
+                @include flex(row, space-between, flex-start);
+            }
+
+            a {
+
+                text-decoration: none;
+                color: #8f8f8f;
+                font-size: $small-font;
+            }
+        }
+
+        .big-logo {
+
+            position: relative;
+            height: 560px;
+            width: 563px;
+
+            img {
+
+                position: absolute;
+                top: -20%;
+            }
+        }
+    }
+
+    .footer-bot {
+
+        background-color: #303030;
+        padding: 20px 0;
+
+        #sign-up-btn {
+
+            padding: 20px 10px;
+            border: 2px solid $azure-radiance;
+            background-color: transparent;
+            color: $white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: $base-font;
+        }
+
+        #follow-us {
+
+            color: $azure-radiance;
+            text-transform: uppercase;
+            font-size: $medium-font;
+            font-weight: 700;
+        }
+
+        .footer-social {
+
+            @include flex(row, space-between, center);
+            list-style-type: none;
+        }
+
+        .social-links {
+
+            @include flex(row, center, center);
+
+
+            &>li {
+
+                margin: 0 5px;
+            }
+        }
+
+
+    }
+
+}
